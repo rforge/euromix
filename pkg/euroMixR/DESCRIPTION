@@ -1,6 +1,6 @@
-Package: euroMix
+Package: euroMixR
 Type: Package
-Title: Calculations for DNA mixtures
+Title: Calculations for DNA mixtures, only R code
 Version: 1.1
 Date: 2013-01-15
 Author: Guro Dorum and Thore Egeland
