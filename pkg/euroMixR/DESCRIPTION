@@ -6,6 +6,6 @@ Date: 2013-01-15
 Author: Guro Dorum and Thore Egeland
 Maintainer: <Thore.Egeland@umb.no>
 Description: Calculations for DNA mixtures accounting for possibly inbred pedigrees (simulations with conditioning, LR). Exact p-values. 
-Depends: R (>= 3.0), paramlink
+Depends: R (>= 3.0), paramlink, Familias
 License: GPL
 LazyLoad: yes
