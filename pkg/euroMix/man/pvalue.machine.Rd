@@ -54,56 +54,56 @@ LR.suspect <- 20
 pvalue <- pvalue.machine(LR.suspect, LR.table, P.table)
 cat("p-value = ", pvalue, "\n")
 
-##########################################################################
-#Example with 9 markers. Compute LR's and gentoype probabilities first
-require(forensim)
-data(db2)
-data(ex9m)
-M <- nrow(R)
-markers <- rownames(R)
+% ##########################################################################
+% #Example with 9 markers. Compute LR's and gentoype probabilities first
+% require(forensim)
+% data(db2)
+% data(ex9m)
+% M <- nrow(R)
+% markers <- rownames(R)
 
-#LR for Hp: victim + suspect vs. Hd: victim + unknown
-lr <- A <- numeric()
-for(i in 1:M){
-  r <- as.numeric(R[i,!is.na(R[i,])])
-  v <- as.numeric(V[i,])
-  s <- as.numeric(S[i,])
-  afreq <- db2[db2[,1]==markers[i],3]
-  A[i] <- choose(length(afreq)+1,2)
-  names(afreq) <- db2[db2[,1]==markers[i],2]
-  lr[i] <- LR(r, Tp=c(v,s), Td=v, Vp=NULL, Vd=s, 
-            xp=0, xd=1, theta=0, prDHet=rep(0.47,4), prDHom=rep(0.47,4)^2, prC=0.05, freq=afreq)$LR
-}
-LR.suspect <- prod(lr)
+% #LR for Hp: victim + suspect vs. Hd: victim + unknown
+% lr <- A <- numeric()
+% for(i in 1:M){
+  % r <- as.numeric(R[i,!is.na(R[i,])])
+  % v <- as.numeric(V[i,])
+  % s <- as.numeric(S[i,])
+  % afreq <- db2[db2[,1]==markers[i],3]
+  % A[i] <- choose(length(afreq)+1,2)
+  % names(afreq) <- db2[db2[,1]==markers[i],2]
+  % lr[i] <- LR(r, Tp=c(v,s), Td=v, Vp=NULL, Vd=s, 
+            % xp=0, xd=1, theta=0, prDHet=rep(0.47,4), prDHom=rep(0.47,4)^2, prC=0.05, freq=afreq)$LR
+% }
+% LR.suspect <- prod(lr)
 
-#LR when replacing suspect with all possible genotypes (i.e. all random men)
-LR.table <- P.table <- matrix(0,M,max(A))
-for(i in 1:M){
-  afreq <- db2[db2$Marker==markers[i],]$Frequency
-  names(afreq) <- db2[db2$Marker==markers[i],]$Allele
-  #All possible genotypes for the given marker
-  gtAll <- as.matrix(expand.grid(names(afreq),names(afreq)))
-  gtAll <- gtAll[gtAll[,1]<=gtAll[,2],]
-  #likelihood ratios and corresponding genotype probabilities
-  lrAll <- pAll <- numeric()
-  for(j in 1:nrow(gtAll)) {
-    rm <- gtAll[j,]
-    r <- as.numeric(R[i,!is.na(R[i,])])
-    v <- as.numeric(V[i,])
-    s <- as.numeric(S[i,])
-    lrAll[j] <- LR(r, Tp=c(v,rm), Td=v, Vp=NULL, Vd=rm, 
-                xp=0, xd=1, theta=0, prDHet=rep(0.47,4), prDHom=rep(0.47,4)^2, prC=0.05, freq=afreq)$LR
-    pAll[j] <- ifelse(rm[1]==rm[2], prod(afreq[as.character(rm)]), 2*prod(afreq[as.character(rm)]) )
-  }
-  #Sort LR's in decreasing order
-  idxSort <- order(lrAll, decreasing=TRUE)
-  LR.table[i,1:length(lrAll)] <- lrAll[idxSort]
-  P.table[i,1:length(lrAll)] <- pAll[idxSort]
-}
+% #LR when replacing suspect with all possible genotypes (i.e. all random men)
+% LR.table <- P.table <- matrix(0,M,max(A))
+% for(i in 1:M){
+  % afreq <- db2[db2$Marker==markers[i],]$Frequency
+  % names(afreq) <- db2[db2$Marker==markers[i],]$Allele
+  % #All possible genotypes for the given marker
+  % gtAll <- as.matrix(expand.grid(names(afreq),names(afreq)))
+  % gtAll <- gtAll[gtAll[,1]<=gtAll[,2],]
+  % #likelihood ratios and corresponding genotype probabilities
+  % lrAll <- pAll <- numeric()
+  % for(j in 1:nrow(gtAll)) {
+    % rm <- gtAll[j,]
+    % r <- as.numeric(R[i,!is.na(R[i,])])
+    % v <- as.numeric(V[i,])
+    % s <- as.numeric(S[i,])
+    % lrAll[j] <- LR(r, Tp=c(v,rm), Td=v, Vp=NULL, Vd=rm, 
+                % xp=0, xd=1, theta=0, prDHet=rep(0.47,4), prDHom=rep(0.47,4)^2, prC=0.05, freq=afreq)$LR
+    % pAll[j] <- ifelse(rm[1]==rm[2], prod(afreq[as.character(rm)]), 2*prod(afreq[as.character(rm)]) )
+  % }
+  % #Sort LR's in decreasing order
+  % idxSort <- order(lrAll, decreasing=TRUE)
+  % LR.table[i,1:length(lrAll)] <- lrAll[idxSort]
+  % P.table[i,1:length(lrAll)] <- pAll[idxSort]
+% }
 
-#The p-value
-pvalue <- pvalue.machine(LR.suspect, LR.table, P.table)
-cat("p-value = ", pvalue, "\n")
+% #The p-value
+% pvalue <- pvalue.machine(LR.suspect, LR.table, P.table)
+% cat("p-value = ", pvalue, "\n")
 
 
 }
