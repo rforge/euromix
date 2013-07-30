@@ -11,11 +11,11 @@ pvalue.machineC <- function( LR.suspect, LR.table, P.table ){
 # P.table     - The population probabilities for every genotype of every marker (MxG matrix)
 #               Must corresponds to the genotypes in LR.table. See description of LR.table.
   
-  sys <- Sys.info()[1]
-  if(sys=="Windows") file <- system.file("files/prodrecfunction.dll", package = "euroMix")
-  if(sys=="Darwin") file <- system.file("files/prodrecfunction.so", package = "euroMix")
-  else stop("Unknown system")
-  dyn.load(file)
+  #sys <- Sys.info()[1]
+  #if(sys=="Windows") file <- system.file("files/prodrecfunction.dll", package = "euroMix")
+  #if(sys=="Darwin") file <- system.file("files/prodrecfunction.so", package = "euroMix")
+  #else stop("Unknown system")
+  #dyn.load(file)
   
   # The number of markers
   M <- nrow( LR.table )
