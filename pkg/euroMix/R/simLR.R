@@ -1,3 +1,5 @@
+#TO DO: - x is not needed when a pedigree is given, because unknown conributors must be specified in the pedigree
+#       - When a pedigree is not specified, known_genotypes must not contain genotypes of non-contributors, only of the contributors!
 
 simLR <- function(R, x, alleles, afreq, pDO, pDI, N, known_genotypes=NULL, ped=NULL, id.U=NULL, id.V=NULL) {
   # Input:
@@ -75,7 +77,7 @@ simLR <- function(R, x, alleles, afreq, pDO, pDI, N, known_genotypes=NULL, ped=N
           available <- contrib_untyped[contrib_untyped %in% ped[[i]]$orig.ids] 
           if( length(available) > 0 ) {
             #set.seed(14)
-            ysim <- markerSim(ped[[i]], N=N, available=available, partialmarker=partialmarkers[[i]])
+            ysim <- markerSim(ped[[i]], N=N, available=available, partialmarker=partialmarkers[[i]],verbose=FALSE)
             #g <- rbind(g,matrix(nrow=2,unlist(lapply(ysim$markerdata, function(m) m[available,]))))
             g <- rbind(g,sapply(ysim$markerdata, function(m) t(m[available-min(ped[[i]]$orig.ids)+1,])))
           }

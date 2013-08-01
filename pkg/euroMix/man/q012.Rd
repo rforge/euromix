@@ -35,5 +35,6 @@ Thore Egeland
 \examples{
 require(paramlink)
 q012()
+}
 
 

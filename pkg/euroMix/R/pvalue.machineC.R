@@ -21,7 +21,7 @@ pvalue.machineC <- function( LR.suspect, LR.table, P.table ){
   M <- nrow( LR.table )
   
   # Preparing input
-  prepped <- prepare.input( LR.table, P.table )
+  prepped <- .prepare.input( LR.table, P.table )
   LR.list <- prepped$LR.list
   Plist  <- as.numeric(unlist(prepped$P.list))
   inflationfactor <- as.numeric(prepped$Inflation.factor)

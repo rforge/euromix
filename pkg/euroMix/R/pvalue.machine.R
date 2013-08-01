@@ -14,7 +14,7 @@ pvalue.machine <- function( LR.suspect, LR.table, P.table ){
   M <- nrow( LR.table )
   
   # Preparing input
-  prepped <- prepare.input( LR.table, P.table )
+  prepped <- .prepare.input( LR.table, P.table )
   LR.list <- prepped$LR.list
   P.list  <- prepped$P.list
   inflation.factor <- prepped$Inflation.factor
@@ -27,12 +27,12 @@ pvalue.machine <- function( LR.suspect, LR.table, P.table ){
   score <- 1.0
   pvalue <- 1.0
   
-  p.value <- recfun( marker, score, pvalue, LR.suspect, LR.list, P.list, M, G, inflation.factor )
+  p.value <- .recfun( marker, score, pvalue, LR.suspect, LR.list, P.list, M, G, inflation.factor )
   return( p.value )
 }
 
 
-recfun <- function( marker, score, pvalue, LR.suspect, LR.list, P.list, M, G, inflation.factor ){
+.recfun <- function( marker, score, pvalue, LR.suspect, LR.list, P.list, M, G, inflation.factor ){
 #
 # The recursive function that computes the p-value.
 #
@@ -53,7 +53,7 @@ recfun <- function( marker, score, pvalue, LR.suspect, LR.list, P.list, M, G, in
       score.new <- score * LR.list[[marker]][genotype]
       pvalue.new <- pvalue * P.list[[marker]][genotype]
       if( score.new * inflation.factor[marker+1] >= LR.suspect ){ # Give up further recursions if we cannot inflate current score above LR.suspect
-        pvals[genotype] <- recfun( marker+1, score.new, pvalue.new, LR.suspect, LR.list, P.list, M, G, inflation.factor ) # We dig one marker deeper into the tree...
+        pvals[genotype] <- .recfun( marker+1, score.new, pvalue.new, LR.suspect, LR.list, P.list, M, G, inflation.factor ) # We dig one marker deeper into the tree...
       } else {
         break; # Breaking out of loop and terminating recursion because we cannot inflate current score
       }
@@ -64,7 +64,7 @@ recfun <- function( marker, score, pvalue, LR.suspect, LR.list, P.list, M, G, in
 
 
 
-prepare.input <- function( LR.table, P.table ) {
+.prepare.input <- function( LR.table, P.table ) {
 #
 # Converting the tables of likelihood ratios and probabilities to lists,
 # keeping only the unique LR-scores for each marker, and sorting everything

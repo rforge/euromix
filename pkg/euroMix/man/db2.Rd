@@ -12,7 +12,7 @@ Norwegian database for 10 SGM Plus markers.
   A data frame with 119 observations on the following 3 variables.
   \describe{
     \item{\code{Marker}}{a factor with levels corresponding to name of markers}
-    \item{\code{Allel}}{a numeric vector denoting allele}
+    \item{\code{Allele}}{a numeric vector denoting allele}
     \item{\code{Frequency}}{a numeric vector in (0,1)}
   }
 }

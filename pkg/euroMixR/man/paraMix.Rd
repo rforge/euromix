@@ -62,7 +62,7 @@ A numeric containing IDs of individuals to be used as loop breakers. Relevant on
 
  \item{eliminate}{
 A non-negative integer, indicating the number of iterations in the internal genotype-compatibility algorithm. 
-Positive values can save time if \code{\link{partialmarker}} is non-empty and the number of alleles is large.
+Positive values can save time if partialmarker is non-empty and the number of alleles is large.
 }
  \item{check}{
 If TRUE check of input is performed and calculations stop if they are likely to take too much time
@@ -70,6 +70,9 @@ If TRUE check of input is performed and calculations stop if they are likely to 
  \item{plot}{
 If TRUE a plot is produced
 }
+ \item{title}{
+ Title of the plot
+ }
  \item{all_typed}{
 An integer vector identifying typed individuals
 }

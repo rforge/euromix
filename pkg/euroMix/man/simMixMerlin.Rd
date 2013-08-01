@@ -38,6 +38,7 @@ Thore Egeland <Thore.Egeland@umb.no>
 
 
 \examples{
+\dontrun{
 #Example 1
 require(paramlink)
 data(db)
@@ -79,5 +80,6 @@ map[,1]=c(12,13)
 map[,3]=c(0.5,0.5)
 write.table(map,"merlin.map",col.names=FALSE,quote=FALSE,row.names=FALSE)
 res=simMixMerlin(x,aa,afreq,generate=FALSE)
+}
 }
 
