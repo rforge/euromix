@@ -67,7 +67,7 @@ simLR <- function(R, x, alleles, afreq, pDO, pDI, N, known_genotypes=NULL, ped=N
       g <- numeric()
       if(length(contrib_typed)>0) {
         #Extract genotypes for known contributors
-        gtKnown <- lapply(known_genotypes[all_typed==contrib_typed],function(x) { if(length(x)==2) x[1:2] else x[2:3] })
+        gtKnown <- lapply(known_genotypes[which(all_typed%in%contrib_typed)],function(x) { if(length(x)==2) x[1:2] else x[2:3] })
         g <- matrix(nrow=length(contrib_typed)*2,rep(unlist(gtKnown),N),byrow=FALSE)
       } 
     #Genotypes for unknown contributors
