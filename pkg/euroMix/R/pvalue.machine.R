@@ -86,8 +86,8 @@ pvalue.machine <- function( LR.suspect, LR.table, P.table ){
   
   # Smart sorting of markers
   ix <- order( LR.max, decreasing=T )
-  LR.table <- LR.table[ix,drop=FALSE]
-  P.table <- P.table[ix,drop=FALSE]
+  LR.table <- LR.table[ix,,drop=FALSE]
+  P.table <- P.table[ix,,drop=FALSE]
   LR.max <- LR.max[ix]
   
   for( marker in 1:M ){
