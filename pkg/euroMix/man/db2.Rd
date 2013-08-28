@@ -2,7 +2,7 @@
 \alias{db2}
 \docType{data}
 \title{
-Allele database
+Allele database.
 }
 \description{
 Norwegian database for 10 SGM Plus markers.
