@@ -4,15 +4,18 @@
 Calculates \code{E(LR(HP))}
 }
 \description{
-Calculates \code{E(LR(HP))} exactly, by formula and numerically for checking for
-given number of alleles; answers is independent of allele frequencies
+Calculates \code{E(LR(HP)), SD(LR(HP) and SD(LR(HD))} exactly
+Answers is independent of allele frequencies except for \code{SD(LR(HD))}
 }
 \usage{
-tableELRHP(L = 4)
+tableELRHP(L = 4,p=rep(1/L,L))
 }
 \arguments{
   \item{L}{
 Integer, at least 1.
+}
+  \item{p}{
+Allele frequencies, vector of length $L$
 }
 }
 
@@ -29,12 +32,9 @@ Thore Egeland Thore.Egeland@umb.no
 Other pairwise relationships requires simple changes in code.
 }
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 
 
 \examples{
 tableELRHP(L = 2)
-#Table in paper
-#cbind(tableELRHP(L=2)[,-5],tableELRHP(L=4)[,4],tableELRHP(L=10)[,4])
 }
 
