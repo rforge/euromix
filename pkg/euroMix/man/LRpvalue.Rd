@@ -38,7 +38,7 @@ Probability of drop-in. A number between 0 and 1.
 }
 }
 \details{
-The function is a wrapper for \code{\link{LRp}} which again is a wrapper for \code{\link{pvalue.machine}}. Likelihood ratios are computed with the \code{\link{LR}} function in \code{\link{forensim}}. For liberties regarding reading data from files, \code{\link{LRp}} can be used to compute p-values for already prepared data matrices. For liberty also regarding the LR model used, \code{\link{pvalue.machine}} is the most generic function to compute a p-value. 
+The function is a wrapper for \code{\link{LRp}} which again is a wrapper for \code{\link{pvalue.machine}}. Likelihood ratios are computed with the \code{\link{LR}} function in \code{\link{forensim}}. For liberties regarding reading data from files, \code{\link{LRp}} can be used to compute p-values for already prepared data frames. For liberty also regarding the LR model used, \code{\link{pvalue.machine}} is the most generic function to compute a p-value. 
 }
 \value{
 \item{LR}{Likelihood ratio}
