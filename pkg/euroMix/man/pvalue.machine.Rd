@@ -34,7 +34,7 @@ The p-value, where a value close to 0 indicates that the suspect is a contributo
 %% ~put references to the literature/web site here ~
 %}
 \author{
-Dorum, Bleka, Snipen <guro.dorum@umb.no>
+Dorum, Bleka, Snipen <guro.dorum@nmbu.no>
 }
 
 
