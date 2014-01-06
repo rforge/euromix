@@ -6,7 +6,7 @@ Computes the p-value for LR.suspect
 }
 \description{
 It is difficult to obtain accurate p-values based on simulation. This function provides
-an exact alternative
+an exact alternative.
 }
 \usage{
 pvalue.machine(LR.suspect, LR.table, P.table)
@@ -34,14 +34,13 @@ The p-value, where a value close to 0 indicates that the suspect is a contributo
 %% ~put references to the literature/web site here ~
 %}
 \author{
-Dorum, Bleka, Snipen <guro.dorum@nmbu.no>
+Dorum, Bleka, Snipen <guro.dorum@umb.no>
 }
 
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 \seealso{
-%\code{\link{pvalue.machineC}} for for a version that included C code and may potentially be a lot faster.
+\code{\link{LRp}} and \code{\link{LRpvalue}} for more user-friendly functions for p-value calculation.
 }
+%% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \examples{
 #Simple example, 2 markers, 3 genotypes. LR's and genotype probabilities precalculated
@@ -105,6 +104,4 @@ cat("p-value = ", pvalue, "\n")
 % pvalue <- pvalue.machine(LR.suspect, LR.table, P.table)
 % cat("p-value = ", pvalue, "\n")
 
-
 }
-
