@@ -6,7 +6,7 @@ Computes the p-value for LR.suspect
 }
 \description{
 It is difficult to obtain accurate p-values based on simulation. This function provides
-an exact alternative
+an exact alternative.
 }
 \usage{
 pvalue.machineC(LR.suspect, LR.table, P.table)
