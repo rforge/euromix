@@ -13,13 +13,13 @@ LRp( sampleData, victimData, suspectData, db, hp, hd, prD, prC )
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{sampleData}{
-Data frame or matrix with sample profile. Each column represent an allele, each row represent a marker. Marker names that correspond with markers in allele frequency database must be given as row names.
+Data frame or matrix with sample profile. Each column represent an allele, each row represent a marker. Only autosomal markers. Marker names that correspond with markers in allele frequency database must be given as row names.
 }
  \item{victimData}{
-Data frame or matrix with victim profile. Each column represent an allele, each row represent a marker. Markers must be in the same order as for sampleData.
+Data frame or matrix with victim profile. Each column represent an allele, each row represent a marker. Only autosomal markers. Markers must be in the same order as for sampleData.
 }
  \item{suspectData}{
-Data frame or matrix with suspect profile. Each column represent an allele, each row represent a marker. Markers must be in the same order as for victimData and sampleData.
+Data frame or matrix with suspect profile. Each column represent an allele, each row represent a marker. Only autosomal markers. Markers must be in the same order as for victimData and sampleData.
 }
 \item{db}{
 Data frame with allele frequencies. Data for the various markers are stacked. First column contains marker names, each name repeated as many times as there are alleles for the marker. Second column contains the allele names and third column contains the frequencies. 

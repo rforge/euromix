@@ -13,13 +13,13 @@ LRpvalue(samplefile, victimfile, suspectfile, freqfile, hp, hd, prD, prC)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{samplefile}{
-CSV file with sample profile. The format must be the same as in LRmix, see the LRmix manual (ref.) for details. The file name must contain the complete path if the file is not in the current working directory.
+CSV file with sample profile. The file can only contain data for autosomal markers, and apart from that the format is the same as required in LRmix. See the LRmix manual for details. The file name must contain the complete path if the file is not in the current working directory.
 }
 \item{victimfile}{
-CSV file with victim profile. Same format as in LRmix.
+CSV file with victim profile. Same format as in LRmix. Only autosomal markers.
 }
 \item{suspectfile}{
-CSV file with suspect profile. Same format as in LRmix.
+CSV file with suspect profile. Same format as in LRmix. Only autosomal markers.
 }
 \item{freqfile}{
 CSV file with allele frequencies. Same format as in LRmix.
