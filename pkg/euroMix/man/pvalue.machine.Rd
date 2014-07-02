@@ -28,7 +28,7 @@ Must corresponds to the genotypes in LR.table. See description of LR.table
 }
 
 \value{
-The p-value, where a value close to 0 indicates that the suspect is a contributor
+The p-value, where a value close to 0 indicates that the suspect is a contributor.
 }
 %\references{
 %% ~put references to the literature/web site here ~
