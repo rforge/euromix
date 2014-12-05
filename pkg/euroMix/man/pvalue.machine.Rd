@@ -34,11 +34,14 @@ The p-value, where a value close to 0 indicates that the suspect is a contributo
 %% ~put references to the literature/web site here ~
 %}
 \author{
-Dorum, Bleka, Snipen <guro.dorum@umb.no>
+Dorum, Bleka, Snipen <guro.dorum@nmbu.no>
 }
 
 \seealso{
-\code{\link{LRp}} and \code{\link{LRpvalue}} for more user-friendly functions for p-value calculation.
+The function is obsolete. 
+
+See
+\code{\link[DNAprofiles]{dists.product}} and \code{\link[DNAprofiles]{dists.product.pair}} for efficient computation of likelihood ratio distributions.
 }
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 

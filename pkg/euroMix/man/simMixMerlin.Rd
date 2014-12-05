@@ -8,7 +8,7 @@ A \code{\link{linkdat}} object is created. MERLIN files can be generated or mixt
 This function requires MERLIN to be installed and correctly pointed to in the PATH environment variable. 
 }
 \usage{
-simMixMerlin(x, aa, afreq, generate = FALSE)
+simMixMerlin(x, aa, afreq, seed = 12345, generate = FALSE)
 }
 
 \arguments{
@@ -22,6 +22,9 @@ therefore has problems with one marker, SE33, in \code{\link{db}}.
   \item{afreq}{
 Frequency list
 }
+  \item{seed}{
+  Random seed to pass on to Merlin. If not set, Merlin will return the same simulated data each time. 
+  }
   \item{generate}{
 If TRUE, Merlin files are generated
 }
