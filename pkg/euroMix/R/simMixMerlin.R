@@ -1,7 +1,12 @@
-simMixMerlin <- function (x, aa, afreq, seed=12345, generate = FALSE) 
+simMixMerlin <- function (x, aa, afreq, options=NULL, seed=12345, generate = FALSE) 
 {
+  if(!is.null(options)) {
+    merlinopt <- paste("--sim --save -r",seed,options)
+  } else {
+    merlinopt <- paste("--sim --save -r",seed)
+  }
   merlin(x, model = F, cleanup = F, generate.files = generate, 
-         options = paste("--sim --save -r",seed))
+         options = merlinopt)
   sim.ped <- scan(file = "merlin-replicate.ped", what = c(1, 1, 1, 1, 1, rep(c("", 1)), x$nMark * 2), comment.char = "e", 
                   quiet = TRUE)
   sim.ped <- sub("/", " ", sim.ped)
@@ -21,3 +26,4 @@ simMixMerlin <- function (x, aa, afreq, seed=12345, generate = FALSE)
   }
   list(y = y, mixlist = mixlist)
 }
+

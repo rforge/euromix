@@ -17,13 +17,16 @@ simMixMerlin(x, aa, afreq, seed = 12345, generate = FALSE)
 }
   \item{aa}{
 allele list. \code{aa[[1]]} contains alleles for marker 1. MERLIN has an upper limit on the number of alleles
-therefore has problems with one marker, SE33, in \code{\link{db}}.
+therefore has problems with one marker, SE33, in \code{\link{db}}
 }
   \item{afreq}{
 Frequency list
 }
+  \item{options}{
+A character with additional options to pass on to Merlin
+}
   \item{seed}{
-  Random seed to pass on to Merlin. If not set, Merlin will return the same simulated data each time. 
+  Random seed to pass on to Merlin. If not set, Merlin will return the same simulated data each time 
   }
   \item{generate}{
 If TRUE, Merlin files are generated
