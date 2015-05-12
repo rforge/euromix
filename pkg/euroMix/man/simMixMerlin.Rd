@@ -8,7 +8,7 @@ A \code{\link{linkdat}} object is created. MERLIN files can be generated or mixt
 This function requires MERLIN to be installed and correctly pointed to in the PATH environment variable. 
 }
 \usage{
-simMixMerlin(x, aa, afreq, seed = 12345, generate = FALSE)
+simMixMerlin(x, aa, afreq, options=NULL, seed = 12345, generate = FALSE)
 }
 
 \arguments{
