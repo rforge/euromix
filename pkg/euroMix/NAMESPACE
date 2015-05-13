@@ -1,2 +1,5 @@
-exportPattern("^[[:alpha:]]+")
+exportPattern("^[[:alpha:]]+") #Export all functions that start with a character
 useDynLib(euroMix)
+import(Familias)
+import(forensim)
+import(paramlink)
