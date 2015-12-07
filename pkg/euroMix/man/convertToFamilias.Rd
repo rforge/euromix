@@ -43,7 +43,7 @@ This file can be read by Familias in the \code{Case Related DNA Data} window.
 }
 
 \author{
-Thore.Egeland@umb.no
+Thore.Egeland@nmbu.no
 }
 
 \examples{

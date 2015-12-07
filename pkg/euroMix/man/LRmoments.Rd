@@ -35,7 +35,7 @@ If \code{TRUE, LR} is log10 transformed.
 Slooten and Egeland (2013, submitted)
 }
 \author{
-Thore Egeland Thore.Egeland@gmail.com
+Thore Egeland Thore.Egeland@nmbu.com
 }
 
 \examples{

@@ -16,7 +16,7 @@ General conditioning is also accounted in the simulation. There is also a functi
 Package: \tab euroMix\cr
 Type: \tab Package\cr
 Version: \tab 1.1\cr
-Date: \tab 2013-01-15\cr
+Date: \tab 2015-12-07\cr
 depends: paramlink, Familias
 License: GPL
 }
@@ -25,7 +25,7 @@ The \code{\link{linkdat}} is created using the R-package
 the \code{\link{linkdat}} function. Some of the functions require Merlin to be installed.
 }
 \author{
-Guro Dorum and Thore Egeland <Thore.Egeland@umb.no>
+Guro Dorum and Thore Egeland <Thore.Egeland@nmbu.no>
 }
 \references{
 See Egeland et al. (2013)

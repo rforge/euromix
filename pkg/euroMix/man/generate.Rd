@@ -30,7 +30,7 @@ The columns are the alleles, the two first for first genotype and so on.
 Normally \code{x} is 4 or less. Computing time may be long for larger values of \code{x}.
 }
 \author{
-Thore Egeland <Thore.Egeland@umb.no>
+Thore Egeland <Thore.Egeland@nmbu.no>
 }
 
 \examples{

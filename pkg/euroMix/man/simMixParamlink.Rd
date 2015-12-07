@@ -28,7 +28,7 @@ A list of length equal to the number of markers (or simulations) each giving the
 }
 
 \author{
-Thore Egeland <Thore.Egeland@umb.no>
+Thore Egeland <Thore.Egeland@nmbu.no>
 }
 
 \examples{

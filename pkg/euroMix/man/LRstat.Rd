@@ -58,7 +58,7 @@ Connected to joint work with Klaas Slooten
 }
 
 \author{
-Thore Egeland Thore.Egeland@umb.no
+Thore Egeland Thore.Egeland@nmbu.no
 }
 
 \seealso{

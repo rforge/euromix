@@ -60,7 +60,7 @@ p.R: the likelihood of the mixture R
 %% ~put references to the literature/web site here ~
 }
 \author{
-Guro Dorum and Thore Egeland <guro.dorum@umb.no>
+Guro Dorum and Thore Egeland <guro.dorum@nmbu.no>
 }
 \note{
 %%  ~~further notes~~

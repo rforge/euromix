@@ -89,7 +89,7 @@ Unexplained alleles
 }
 
 \author{
-Magnus Dehli Vigeland and Thore Egeland <Thore.Egeland@umb.no>
+Magnus Dehli Vigeland and Thore Egeland <Thore.Egeland@nmbu.no>
 }
 
 \seealso{

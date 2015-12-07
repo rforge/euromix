@@ -72,7 +72,7 @@ See \code{\link{paraMix}}.
 Egeland et al (2013)
 }
 \author{
-Thore Egeland <Thore.Egeland@umb.no>
+Thore Egeland <Thore.Egeland@nmbu.no>
 }
 
 \seealso{

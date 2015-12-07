@@ -26,7 +26,7 @@ A table for a set of pairwise relationships.
 Slooten and Egeland (to appear)
 }
 \author{
-Thore Egeland Thore.Egeland@umb.no
+Thore Egeland Thore.Egeland@nmbu.no
 }
 \note{
 Other pairwise relationships requires simple changes in code.

@@ -30,7 +30,7 @@ A matrix giving the joint distribution
 To appear
 }
 \author{
-Thore Egeland
+Thore Egeland <Thore.Egeland@nmbu.no>
 }
 
 \examples{

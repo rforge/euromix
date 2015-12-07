@@ -39,7 +39,7 @@ If TRUE, Merlin files are generated
 }
 
 \author{
-Thore Egeland <Thore.Egeland@umb.no>
+Thore Egeland <Thore.Egeland@nmbu.no>
 }
 
 

@@ -28,7 +28,7 @@ The function calls \code{\link{oneMarkerDistribution}} for IBD=0,1 and 2.
 None
 }
 \author{
-Thore Egeland
+Thore Egeland <Thore.Egeland@nmbu.no>
 }
 
 
