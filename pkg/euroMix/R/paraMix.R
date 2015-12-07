@@ -45,16 +45,16 @@ function (x, R, id.U, id.V = NULL, alleles, afreq = NULL, Xchrom = FALSE,
     }
     
     R_INTERNAL = match(R, alleles)
-    allgenos = paramlink:::.allGenotypes(length(alleles))
+    allgenos = allGenotypes(length(alleles))
     allgenos_in_R = which(allgenos[, 1] %in% R_INTERNAL & allgenos[, 2] %in% R_INTERNAL)
     id_split = lapply(x, function(ped) intersect(id.U, ped$orig.ids))
     id_order = do.call(c, id_split)
     a = lapply(1:length(x), function(i) {
-        allgenos_row_index = paramlink:::.make.grid.subset(x[[i]], 
+        allgenos_row_index = geno.grid.subset(x[[i]], 
             partialmarkers[[i]], id_split[[i]], make.grid = F)
         lapply(allgenos_row_index, intersect, y = allgenos_in_R)
     })
-    mixgrid = paramlink:::.my.grid(unlist(a, recursive = FALSE))
+    mixgrid = fast.grid(unlist(a, recursive = FALSE))
     if (length(R_not_masked) > 0) {
         R_not_masked_INTERNAL = match(R_not_masked, alleles)
         mixgrid = mixgrid[apply(mixgrid, 1, function(r) all(R_not_masked_INTERNAL %in% allgenos[r, ])), , drop = F]

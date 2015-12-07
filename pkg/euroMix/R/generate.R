@@ -1,7 +1,7 @@
 generate=function (R, K, x = 1){ 
    #if(length(K)==0) return(.gxMix(R,NULL,x))
    if(x==0) return(NULL)
-   allgenos = paramlink:::.allGenotypes(max(R))
+   allgenos = allGenotypes(max(R))
    allgenos_in_R = which(allgenos[, 1] %in% R & allgenos[, 2] %in% R)
    mixgrid = expand.grid(rep(list(allgenos_in_R), x))
    R_not_masked = setdiff(R, K)

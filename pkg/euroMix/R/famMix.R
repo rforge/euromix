@@ -2,7 +2,7 @@ famMix <- function (x, R, id.U, id.V = NULL,partialmarker=NULL,theta=0,mutationR
    if(silentFrequency==0) silentFrequency=NULL
    stopifnot(x$nMark==0)
    if (is.null(partialmarker)) m = stop("Partialmarker must be supplied") else m = partialmarker
-   allgenos = paramlink:::.allGenotypes(attr(m, 'nalleles'))
+   allgenos = allGenotypes(attr(m, 'nalleles'))
    allgenos_in_R = which(allgenos[, 1] %in% R & allgenos[, 2] %in% R)
 
    all_typed = which(m[,1] != 0 | m[,2] != 0)
