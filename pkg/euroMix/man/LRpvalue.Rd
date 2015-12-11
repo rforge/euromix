@@ -51,9 +51,9 @@ Dorum et al. Exact computation of the distribution of likelihood ratios with for
 \author{
 Guro Dorum <guro.dorum@nmbu.no>
 }
-\note{
+%\note{
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
@@ -61,13 +61,14 @@ Guro Dorum <guro.dorum@nmbu.no>
 \code{\link{pvalue.machine},\link{LRp}}
 }
 \examples{
-data(testdata)
+data(sample);data(suspect);data(victim);data(freqs)
 samplefile <- tempfile(); write.table(sample, samplefile, sep=",", row.names=FALSE)
 victimfile <- tempfile(); write.table(victim, victimfile, sep=",", row.names=FALSE)
 suspectfile <- tempfile(); write.table(suspect, suspectfile, sep=",", row.names=FALSE)
 freqfile <- tempfile(); write.table(freqs, freqfile, sep=",", row.names=FALSE)
 
-LRpvalue(samplefile, victimfile, suspectfile, freqfile, hp=c("V","S"), hd=c("V","U"), prD=0.47, prC=0.05)
+LRpvalue(samplefile, victimfile, suspectfile, freqfile, hp=c("V","S"), hd=c("V","U"), 
+prD=0.47, prC=0.05)
 unlink(c(samplefile, victimfile, suspectfile, freqfile))
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

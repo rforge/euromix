@@ -17,7 +17,7 @@ Package: \tab euroMix\cr
 Type: \tab Package\cr
 Version: \tab 1.1\cr
 Date: \tab 2015-12-07\cr
-depends: paramlink, Familias
+depends: paramlink, Familias, forensim
 License: GPL
 }
 The \code{\link{linkdat}} is created using the R-package
@@ -33,6 +33,6 @@ See Egeland et al. (2013)
 
 \keyword{ package }
 
-\examples{
+%\examples{
 
-}
+%}

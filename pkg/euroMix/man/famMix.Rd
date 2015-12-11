@@ -11,7 +11,11 @@ of \code{\link{Familias}} for likelihood calculation and therefore theta-correct
 are accomodated. 
 }
 \usage{
-famMix(x, R, id.U, id.V = NULL, partialmarker = NULL, theta = 0, mutationRateFemale = 0, mutationRateMale = 0, mutationModelFemale = "stable", mutationModelMale = "stable", mutationRangeFemale = 0.1, mutationRangeMale = 0.1, silentFrequency = 0,check=TRUE)
+famMix(x, R, id.U, id.V = NULL, partialmarker = NULL, theta = 0, 
+mutationRateFemale = 0, mutationRateMale = 0, 
+mutationModelFemale = "stable", mutationModelMale = "stable", 
+mutationRangeFemale = 0.1, mutationRangeMale = 0.1, 
+silentFrequency = 0,check=TRUE)
 }
 \arguments{
   \item{x}{
@@ -33,22 +37,22 @@ A \code{\link{marker}} object.
 Real in [0,1]
 }
   \item{mutationRateFemale}{
-See \code{\link{AddAlleleSystem}}.
+See \code{\link{FamiliasLocus}}.
 }
   \item{mutationRateMale}{
-See \code{\link{AddAlleleSystem}}.
+See \code{\link{FamiliasLocus}}.
 }
   \item{mutationModelFemale}{
-See \code{\link{AddAlleleSystem}}.
+See \code{\link{FamiliasLocus}}.
 }
   \item{mutationModelMale}{
-See \code{\link{AddAlleleSystem}}.
+See \code{\link{FamiliasLocus}}.
 }
   \item{mutationRangeFemale}{
-See \code{\link{AddAlleleSystem}}.
+See \code{\link{FamiliasLocus}}.
 }
   \item{mutationRangeMale}{
-See \code{\link{AddAlleleSystem}}.
+See \code{\link{FamiliasLocus}}.
 }
   \item{silentFrequency}{
 Real in [0,1].

@@ -27,7 +27,9 @@ Likelihood calculations are performed using the \code{\link{likelihood}} of \cod
 The function \code{checkInput} checks input to \code{paraMix}.
 }
 \usage{
-paraMix(x, R, id.U, id.V = NULL, alleles, afreq = NULL, Xchrom= FALSE, known_genotypes = list(), loop_breakers =NULL, eliminate = 0, check = TRUE, plot = TRUE, title= NULL)
+paraMix(x, R, id.U, id.V = NULL, alleles, afreq = NULL, 
+Xchrom= FALSE, known_genotypes = list(), loop_breakers =NULL, 
+eliminate = 0, check = TRUE, plot = TRUE, title= NULL)
 checkInput(x, R, id.U, id.V, alleles, all_typed, K, R_not_masked)
 }
 
@@ -137,9 +139,12 @@ man_ped=nuclearPed(2)
 victim = singleton(id=10, sex=2)
 known = list(c(4,3,3),c(10,1,2)) #individual 4 is 3/3, and 10 (the victim) is 1/2.
 #The likelihoods corresponding to H1,H2 and H3
-l1=paraMix(list(man_ped, victim), R, id.U=NULL, id.V=NULL, alleles=alleles, afreq=afreq, known_genotypes=known)$lik
-l2=paraMix(list(man_ped, victim), R, id.U=1, id.V=4, alleles=alleles, afreq=afreq, known_genotypes=known)$lik
-l3=paraMix(list(man_ped, victim), R, id.U=3, id.V=4, alleles=alleles, afreq=afreq, known_genotypes=known)$lik
+l1=paraMix(list(man_ped, victim), R, id.U=NULL, id.V=NULL, 
+alleles=alleles, afreq=afreq, known_genotypes=known)$lik
+l2=paraMix(list(man_ped, victim), R, id.U=1, id.V=4, 
+alleles=alleles, afreq=afreq, known_genotypes=known)$lik
+l3=paraMix(list(man_ped, victim), R, id.U=3, id.V=4, 
+alleles=alleles, afreq=afreq, known_genotypes=known)$lik
 LR12=l1/l2
 stopifnot(abs(LR12-3.125)<10^(-6)) 
 LR13=l1/l3

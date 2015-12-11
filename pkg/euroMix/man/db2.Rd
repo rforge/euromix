@@ -22,9 +22,9 @@ The format is convenient for R.
 \source{
 Andreassen et al. (2007).
 }
-\references{
+%\references{
 %%  ~~ possibly secondary sources and usages ~~
-}
+%}
 \examples{
 data(db2)
 #Checks that frequencies add to 1

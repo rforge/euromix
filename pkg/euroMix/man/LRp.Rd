@@ -62,7 +62,7 @@ Guro Dorum <guro.dorum@nmbu.no>
 }
 
 \examples{
-data(ex9m)
+data(R,S,V)
 data(db2)
 LRp(sampleData=R,victimData=V,suspectData=S,db=db2,hp=c('V','S'),hd=c('V','U'),prD=0.47,prC=0.05 )
 }

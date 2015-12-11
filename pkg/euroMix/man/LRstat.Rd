@@ -8,7 +8,8 @@ Distribution of LR(HP) and LR(HD)
 Distribution of LR(HP) and LR(HD) are calculated as well as some summary statistics. 
 }
 \usage{
-LRstat(ped_claim, ped_true, ids, alleles, afreq = NULL, known_genotypes = list(), loop_breakers = NULL, Xchrom = F, plot = T)
+LRstat(ped_claim, ped_true, ids, alleles, afreq = NULL, 
+known_genotypes = list(), loop_breakers = NULL, Xchrom = F, plot = T)
 }
 \arguments{
   \item{ped_claim}{

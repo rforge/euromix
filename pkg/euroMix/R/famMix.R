@@ -11,7 +11,8 @@ famMix <- function (x, R, id.U, id.V = NULL,partialmarker=NULL,theta=0,mutationR
    K = unique(c(m[contrib_typed, ]))
    R_not_masked = setdiff(R, K)
 
-   if(check) stopp=euroMix:::.checkInput(x,R,id.U,id.V,partialmarker=m,all_typed,K,R_not_masked)
+   #if(check) stopp=.checkInput(x,R,id.U,id.V,partialmarker=m,all_typed,K,R_not_masked)
+   if(check) stopp=checkInput(x,R,id.U,id.V,all_typed,K,R_not_masked)
    set=generate(R,K,length(contrib_untyped))
    
    if(is.null(set)) x=addMarker(x,m)
@@ -23,7 +24,7 @@ famMix <- function (x, R, id.U, id.V = NULL,partialmarker=NULL,theta=0,mutationR
     m2=x$markerdata[[1]]
     x$available=which(m2[,1] != 0 | m2[,2] != 0)
     x=relabel(x,1:x$nInd,x$orig.ids)
-    euroMix:::.preFamilias2(x,new=TRUE,mutationRateFemale = mutationRateFemale, mutationRateMale = mutationRateMale , mutationModelFemale = mutationModelFemale, mutationModelMale = mutationModelMale, mutationRangeFemale =  mutationRangeFemale, mutationRangeMale = mutationRangeMale, silentFrequency = silentFrequency )
+    .preFamilias2(x,new=TRUE,mutationRateFemale = mutationRateFemale, mutationRateMale = mutationRateMale , mutationModelFemale = mutationModelFemale, mutationModelMale = mutationModelMale, mutationRangeFemale =  mutationRangeFemale, mutationRangeMale = mutationRangeMale, silentFrequency = silentFrequency )
     PE=GetProbabilities(kinship=theta)$likelihoodsPerSystem
 	list(x=x,likelihood = sum(PE), allLikelihoods = PE[PE>0])
 }

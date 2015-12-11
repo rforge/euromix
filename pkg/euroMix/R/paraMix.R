@@ -116,72 +116,72 @@ checkInput= function (x, R, id.U, id.V, alleles, all_typed, K, R_not_masked) {
 }
 
 
-.checkInput=function(x,R,id.U,id.V,partialmarker,all_typed,K,R_not_masked){
-   if (length(intersect(id.U, id.V)) > 0)
-      stop("Contributors and noncontributors overlap") # endret teksten her
-   if (any(id.U %in% all_typed))
-      stop("Input error. Unknown persons typed")
-   if (!all(R %in% as.integer(attr(partialmarker, "alleles"))))
-      stop("Mixture contains non-existing alleles")
-   if (!all(K %in% R))
-      stop("Input error. Known contributors with alleles outside mixture")
-   if (length(R_not_masked) > 2*length(id.U))
-      stop("Input error. Not enough unknown contributors")
-   if (length(R_not_masked) > 8)
-      stop("No of unmasked alleles greater than 8 probably prohibitive. Set check=FALSE to try")	
-   if (length(length(id.U)) > 8)
-      stop("No of unknown greater than 8 probably prohibitive. Set check=FALSE to try")	  
-   	  
-   0
-   }
+# .checkInput=function(x,R,id.U,id.V,partialmarker,all_typed,K,R_not_masked){
+#    if (length(intersect(id.U, id.V)) > 0)
+#       stop("Contributors and noncontributors overlap") # endret teksten her
+#    if (any(id.U %in% all_typed))
+#       stop("Input error. Unknown persons typed")
+#    if (!all(R %in% as.integer(attr(partialmarker, "alleles"))))
+#       stop("Mixture contains non-existing alleles")
+#    if (!all(K %in% R))
+#       stop("Input error. Known contributors with alleles outside mixture")
+#    if (length(R_not_masked) > 2*length(id.U))
+#       stop("Input error. Not enough unknown contributors")
+#    if (length(R_not_masked) > 8)
+#       stop("No of unmasked alleles greater than 8 probably prohibitive. Set check=FALSE to try")	
+#    if (length(length(id.U)) > 8)
+#       stop("No of unknown greater than 8 probably prohibitive. Set check=FALSE to try")	  
+#    	  
+#    0
+#    }
 
-#seed=177
-.Example2=function(id.victim=9,id.suspect=10,conditional=FALSE,nMarkers=23,seed=NULL,check=TRUE){
-if(!is.null(seed)) set.seed(seed)
-data(db)
-x=cousinPed(1)
-x=swapSex(addOffspring(x,father=7,mother=8,noffs=2),ids=9)
-x=addOffspring(x,father=1,noffs=1) #Pedigree has been defined
-index=c(setdiff(seq(2,10,2),id.victim),11)
-#loglik=rep(0,12)
-loglik=rep(0,length(index))
-names(loglik)=index
-nn=as.character(unique(db[,1]))
-ret=x
-N=min(length(nn),nMarkers)
-RR=vector("list",N)
-
-for (k in 1:N){
-  
- cat(k,"\n")
- afreq1=as.double(db[db$Marker==nn[k],3])
- afreq1=round(afreq1,7)
- afreq1=afreq1/sum(afreq1)
- alleles=as.integer(1:length(afreq1))
- m1=marker(x,alleles=alleles,afreq=afreq1)
- if(conditional){
-   y=markerSim(x,N=1,available=id.victim,partialmarker=m1,verbose=FALSE,loop_breakers=7,seed=NULL)
-   ret=addMarker(ret,y$markerdata[[1]])
-   m1=y$markerdata[[1]]
-   y=markerSim(x,N=1,available=id.suspect,partialmarker=m1,verbose=FALSE,loop_breakers=7,seed=NULL)
- }
- if(!conditional){
-   y=markerSim(x,N=1,available=c(id.victim,id.suspect),partialmarker=m1,verbose=FALSE,loop_breakers=7,seed=NULL)
-   ret=addMarker(ret,y$markerdata[[1]])
-   }
- R=simMixParamlink(y,alleles)[[1]] #Finds mixtures
- RR[[k]]=R
- known=list(c(id.victim,as.integer(y$markerdata[[1]][id.victim,])))
- for(i in 1:length(index)){
-   foo=paraMix(x,R,id.U=index[i],id.V=NULL,alleles=alleles,afreq=afreq1,loop_breakers=7,known_genotypes=known,check=check,plot=FALSE)
-   loglik[i]=loglik[i]+log(foo$likelihood)
- }
-}
-#plot(x,marker=1:2,title="")
-#loglik=loglik[index]
-post=exp(loglik)/sum(exp(loglik))
-names(post)=index
-list(post=post,ret=ret,mixture=RR)
-}
+# #seed=177
+# .Example2=function(id.victim=9,id.suspect=10,conditional=FALSE,nMarkers=23,seed=NULL,check=TRUE){
+# if(!is.null(seed)) set.seed(seed)
+# data(db)
+# x=cousinPed(1)
+# x=swapSex(addOffspring(x,father=7,mother=8,noffs=2),ids=9)
+# x=addOffspring(x,father=1,noffs=1) #Pedigree has been defined
+# index=c(setdiff(seq(2,10,2),id.victim),11)
+# #loglik=rep(0,12)
+# loglik=rep(0,length(index))
+# names(loglik)=index
+# nn=as.character(unique(db[,1]))
+# ret=x
+# N=min(length(nn),nMarkers)
+# RR=vector("list",N)
+# 
+# for (k in 1:N){
+#   
+#  cat(k,"\n")
+#  afreq1=as.double(db[db$Marker==nn[k],3])
+#  afreq1=round(afreq1,7)
+#  afreq1=afreq1/sum(afreq1)
+#  alleles=as.integer(1:length(afreq1))
+#  m1=marker(x,alleles=alleles,afreq=afreq1)
+#  if(conditional){
+#    y=markerSim(x,N=1,available=id.victim,partialmarker=m1,verbose=FALSE,loop_breakers=7,seed=NULL)
+#    ret=addMarker(ret,y$markerdata[[1]])
+#    m1=y$markerdata[[1]]
+#    y=markerSim(x,N=1,available=id.suspect,partialmarker=m1,verbose=FALSE,loop_breakers=7,seed=NULL)
+#  }
+#  if(!conditional){
+#    y=markerSim(x,N=1,available=c(id.victim,id.suspect),partialmarker=m1,verbose=FALSE,loop_breakers=7,seed=NULL)
+#    ret=addMarker(ret,y$markerdata[[1]])
+#    }
+#  R=simMixParamlink(y,alleles)[[1]] #Finds mixtures
+#  RR[[k]]=R
+#  known=list(c(id.victim,as.integer(y$markerdata[[1]][id.victim,])))
+#  for(i in 1:length(index)){
+#    foo=paraMix(x,R,id.U=index[i],id.V=NULL,alleles=alleles,afreq=afreq1,loop_breakers=7,known_genotypes=known,check=check,plot=FALSE)
+#    loglik[i]=loglik[i]+log(foo$likelihood)
+#  }
+# }
+# #plot(x,marker=1:2,title="")
+# #loglik=loglik[index]
+# post=exp(loglik)/sum(exp(loglik))
+# names(post)=index
+# list(post=post,ret=ret,mixture=RR)
+# }
 
 

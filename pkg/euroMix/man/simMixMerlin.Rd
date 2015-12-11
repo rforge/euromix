@@ -64,8 +64,9 @@ res=simMixMerlin(x,aa,afreq,generate=TRUE)
 #The map file generated default above leads to tightly linked markers. The map file
 #can be edited and simMixMerlin rerun with generate=FALSE. 
 #Example 2 
-#Next we consider an example #with two markers (for simplicity), D12 and VWA, markers 3 and 23 in db and illustrate
-#how the map file is edited to account for linkage
+#Next we consider an example #with two markers (for simplicity), 
+#D12 and VWA, markers 3 and 23 in db and illustrate how the map 
+#file is edited to account for linkage
 x=cousinPed(1)
 x=swapSex(addOffspring(x,father=7,mother=8,noff=2),ids=10)
 Nmarkers=2
@@ -76,15 +77,18 @@ for (j in c(3,23)){
 i=i+1
 aa[[i]]=db2[[i]]$Allel
 afreq[[i]]=db2[[i]]$Frequency
-m=marker(x,9,c(1,1),10,c(1,1),alleles=1:length(aa[[i]]),afreq=afreq[[i]])
+m=marker(x,9,c(1,1),10,c(1,1),alleles=1:length(aa[[i]]),
+afreq=afreq[[i]])
 x=addMarker(x,m)
 }
 res=simMixMerlin(x,aa,afreq,generate=TRUE)
-#Next edit map file, normally this is done  simpler than below
+#Next edit map file, normally this is done  
+#simpler than below
 map=read.table("merlin.map",header=FALSE)
 map[,1]=c(12,13)
 map[,3]=c(0.5,0.5)
-write.table(map,"merlin.map",col.names=FALSE,quote=FALSE,row.names=FALSE)
+write.table(map,"merlin.map",col.names=FALSE,quote=FALSE,
+row.names=FALSE)
 res=simMixMerlin(x,aa,afreq,generate=FALSE)
 }
 }
